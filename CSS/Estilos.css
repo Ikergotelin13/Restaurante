@@ -1,0 +1,287 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333;
+    background-color: #d4d7fc;
+  }
+  
+  header {
+    background-color: #333;
+    color: #fff;
+    padding: 1em;
+    text-align: center;
+  }
+  
+  main {
+    display: grid;
+    grid-gap: 10px;
+    padding: 20px;
+  }
+  
+  #main-container {
+    position: relative; /* Añadido */
+    background-color: white;
+    text-align: center;
+  }
+  
+  #qrcode-container {
+    display: block;
+    position: relative; /* Añadido */
+    z-index: 2; /* Ajustado a un valor mayor */
+  }
+  
+  #menu, #filters {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: none;
+    z-index: 1;
+    background-color: white;
+  }
+  
+  .card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 8px;
+    width: 250px;
+    min-height: 300px;
+    margin-top: 2%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: 20px;
+  }
+  
+  .checkbox-filter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .checkbox-filter label {
+    margin-bottom: 2px;
+  }
+  
+  .checkbox-filter input[type="checkbox"] {
+    margin-bottom: 5px;
+  }
+  
+  .checkbox-filter input[type="checkbox"]:hover {
+    background-color: #444;
+  }
+  
+  .checkbox-filter .btn {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .checkbox-filter .btn:hover {
+    background-color: #444;
+  }
+  
+  .checkbox-filter .btn-gray {
+    background-color: #ccc;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .checkbox-filter .btn-gray:hover {
+    background-color: #bbb;
+  }
+  
+  /* ... Otros estilos ... */
+  
+    .checkbox-filter .btn-gray.active {
+      background-color: #333;
+      color: #fff;
+    }
+    
+    .checkbox-filter .btn-gray.active:hover {
+      background-color: #444;
+    }
+    
+    .checkbox-filter input[type="checkbox"]:checked + .btn-gray {
+      background-color: #333;
+      color: #fff;
+    }
+    
+    .checkbox-filter input[type="checkbox"]:checked + .btn-gray:hover {
+      background-color: #444;
+    }
+    
+    .checkbox-filter .btn-gray.disabled {
+      background-color: #ccc;
+      color: #fff;
+    }
+    
+    .checkbox-filter .btn-gray.disabled:hover {
+      background-color: #bbb;
+    }
+    
+    .checkbox-filter .btn-gray.disabled.active {
+      background-color: #333;
+      color: #fff;
+    }
+    
+    .checkbox-filter .btn-gray.disabled.active:hover {
+      background-color: #444;
+    }
+    
+    /* Agregamos un estilo para el botón de filtrar */
+    
+    .filter-btn {
+      background-color: #333;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+    
+    .filter-btn:hover {
+      background-color: #444;
+    }
+    
+    .filter-btn.active {
+      background-color: #333;
+      color: #fff;
+    }
+    
+    .filter-btn.active:hover {
+      background-color: #444;
+    }
+    
+    /* Agregamos un estilo para el dropdown de filtros */
+    
+    .filter-dropdown {
+      position: relative;
+      display: inline-block;
+      vertical-align: middle;
+      margin-top: 10px;
+    }
+    
+    .filter-dropdown::before {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: #333;
+      transform: scaleX(0);
+      transition: transform 0.3s ease-in-out;
+    }
+    
+    .filter-dropdown.opened::before {
+      transform: scaleX(1);
+    }
+    
+    .filter-dropdown .dropdown-content {
+      position: absolute;
+      background-color: #f5f5f5;
+      border: 1px solid #ccc;
+      padding: 10px;
+      z-index: 1;
+      display: none;
+    }
+    
+    .filter-dropdown .dropdown-content a {
+      color: #333;
+      text-decoration: none;
+      padding: 10px;
+      border-bottom: 1px solid #ccc;
+    }
+    
+    .filter-dropdown .dropdown-content a:hover {
+      background-color: #f5f5f5;
+      color: #333;
+    }
+    
+    .filter-dropdown .dropdown-content .divider {
+      height: 1px;
+      background-color: #ccc;
+    }
+    
+    .filter-dropdown.opened .dropdown-content {
+      display: block;
+    }
+    
+    .filter-dropdown.opened .dropdown-content a {
+      background-color: #f5f5f5;
+      color: #333;
+    }
+    
+    .filter-dropdown.opened .dropdown-content a:hover {
+      background-color: #f5f5f5;
+      color: #333;
+    }
+    
+    .filter-dropdown.opened .dropdown-content .divider {
+      background-color: #ccc;
+    }
+    */
+    label{
+      width: 120px;
+    }
+    
+    #categoria{
+      width: 130px;
+    }
+    #orden{
+      width: 130px;
+    }
+  
+    #menu{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content:space-around;
+      align-items: flex-start;
+      padding: 20px;
+    }
+    
+    div#filters{
+      margin-left: 12%;
+    }
+  
+    #filtros{
+      margin-left:12% ;
+      margin-bottom:-20px;
+    }
+  
+    #favorites{
+      margin-left:12%;
+    }
+
+    #qrcode{
+    margin-left: 20%;
+    margin-top: 3%;
+    }
+
+    #titulo-QR{
+      background-color: rgb(243, 221, 200);
+      color:rgb(0, 191, 255);
+    }
+    

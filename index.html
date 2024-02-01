@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./CSS/Estilos,.css">
+  <title>Carta del Restaurante</title>
+  <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
+</head>
+<body>
+  <div id="main-container">
+    <div id="qrcode-container">
+      <h1 id="titulo-QR">Escanea este código QR</h1>
+      <div id="qrcode"></div>
+    </div>
+    <div id="menu"></div>
+    <div id="filters"></div>
+  </div>
+  <header>
+    <h1>Carta del Restaurante</h1>
+  </header>
+  <main>
+    <div id="filters">
+      <label for="categoria">Categoría:</label>
+      <select id="categoria">
+        <option value="all">Todos los platos</option>
+        <option value="entrada">Entradas</option>
+        <option value="principal">Platos Principales</option>
+        <option value="postre">Postres</option>
+      </select>
+    
+      <label for="orden">Ordenar por:</label>
+      <select id="orden">
+        <option value="">Seleccionar</option>
+        <option value="asc">Menor a Mayor</option>
+        <option value="desc">Mayor a Menor</option>
+      </select>
+    </div>
+    <div id="filtros" class="checkbox-filter">
+      <label><input type="checkbox" id="veganCheckbox"> Veganos</label>
+      <label><input type="checkbox" id="celiacCheckbox"> Celíacos</label>
+      <label><input type="checkbox" id="lactoseIntolerantCheckbox"> Intolerantes a la Lactosa</label>
+      <label><input type="checkbox" id="favoritesCheckbox"> Favoritos</label>
+      <button class="filter-btn" id="applyFiltersBtn">Aplicar Filtros</button>
+    </div>
+    <div id="menu" class="card-container"></div>
+    <div id="favorites">
+      <h2>Mis Favoritos</h2>
+      <div id="favoritesList" class="card-container"></div>
+    </div>
+  </main>
+  <script src="./JS/JS.js"></script>
+</body>
+</html>
